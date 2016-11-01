@@ -6,10 +6,12 @@
                     </div>
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
-                            <span class="m-r-sm text-muted welcome-message">Training And Placement</span>
+                            <span class="m-r-sm text-muted welcome-message">Welcome To Training And Placement Module.</span>
                         </li>
                         <li>
-                           
+                            <a href="">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
                         </li>
                     </ul>
 
