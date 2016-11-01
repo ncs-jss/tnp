@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use Auth;
 use Redirect;
+use Validator;
+use Illuminate\Http\Request;
 class AuthController extends BaseController
 {
 	public function home(){
@@ -13,7 +15,7 @@ class AuthController extends BaseController
 		return view('login');	
 	}
 	public function login(Request $request){
-		$data = $request->all();
+		$data = array('email'=>$request->get('email'),'password'=>$request->get('password'));
 		$rules=array(
 				'email' => 'required',
 				'password' => 'required',
@@ -21,14 +23,14 @@ class AuthController extends BaseController
 			$validator = Validator::make($data, $rules);
 			if($validator->fails()){
 
-				return Redirect::back()->withErrors($validator->errors())->withInput();
+				return Redirect::back()->withErrors($validator)->withInput();
 			}
 			else{
 				if(Auth::attempt($data)){
 					return Redirect::route('dashboard');
 				}
 				else{
-					return Redirect::back()->with('message','Your E-mail / Password combination is incorrect!')
+					return Redirect::back()->with('message','Your E-mail / Password combination is incorrect!');
 				}
 			}
 
