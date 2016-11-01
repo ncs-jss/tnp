@@ -16,7 +16,7 @@ class JobProfileTable extends Migration
         Schema::create('job_profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('company_id')->unsigned()->length(10);
-            $table->string('job_descriotion');
+            $table->string('job_description');
             $table->string('ctc');
             $table->timestamps();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');

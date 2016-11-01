@@ -20,7 +20,7 @@ class MarksTable extends Migration
             $table->string('Xmarkstype');
             $table->string('Xmarks');
             $table->string('XIImarkstype');
-            $table->string('Xmarks');
+            $table->string('XIImarks');
             $table->string('sem1');
             $table->string('sem2');
             $table->string('sem3');

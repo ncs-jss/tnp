@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-	$action = "Dashboard";
-	$name = "admin";
-    return view('dashboard',compact('action','name'));
+Route::get('/',['as'=>'login','uses'=>'AuthController@home']);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('dashboard',['as'=>'dashboard','uses'=>'DashboardController@index']);
+Route::get('logout',['as'=>'logout','uses'=>'AuthController@logout']);
+
 });
