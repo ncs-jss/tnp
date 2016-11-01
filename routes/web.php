@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$action = "Dashboard";
+	$name = "admin";
+    return view('dashboard',compact('action','name'));
 });
