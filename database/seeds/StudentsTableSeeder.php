@@ -18,7 +18,6 @@ class StudentsTableSeeder extends Seeder
         $student->contact = "8800607309";
         $student->course = "B. Tech.";
         $student->branch = "CSE";
-        $student->address = "MEERUT";
         $student->save();
 
     }

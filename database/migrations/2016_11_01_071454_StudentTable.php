@@ -21,7 +21,6 @@ class StudentTable extends Migration
             $table->string('course');
             $table->string('branch');
             $table->string('rollno');
-            $table->string('address',1000);
             $table->rememberToken();
             $table->timestamps();
         });

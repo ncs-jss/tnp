@@ -6,9 +6,8 @@
                     <img alt="image" class ="img-circle" src="{{URL::asset('img/profile_small.jpg')}}"/>
                 </span>
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Welcome {{$name}}</strong>
+                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Welcome {{Auth::user()->name}}</strong>
                     </span> <span class="text-muted text-xs block"></span> </span> </a>
-                    
                 </div>
                 <div class="logo-element">
                    Training And Placement</div>
@@ -33,21 +32,15 @@
                   @else
                   <li><a href="{{URL::route('students.index')}}">View All Students Data</a></li>
                   @endif
-                  @if(Request::path() == 'students')
-                  <li><a href="{{URL::route('students.create')}}">Insert Student Data</a></li>
+                  @if(strlen(strpos(Request::path(),'students'))>0 && strlen(strpos(Request::path(),'create'))>0)
+                  <li><a href="{{URL::route('students.create')}}">Add New Student</a></li>
                   @else
-                  <li><a href="{{URL::route('students.create')}}">Insert Student Data</a></li>
+                  <li><a href="{{URL::route('students.create')}}">Add New Student</a></li>
                   @endif
               </ul>
           </li>
           @else
-          <li>
-            <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Students</span> <span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level collapse">
-              <li><a href="{{URL::route('students.index')}}">View All Students Data</a></li>
-              <li><a href="{{URL::route('students.create')}}">Insert Student Data</a></li>
-          </ul>
-      </li>
+          
       @endif
   </ul>
 

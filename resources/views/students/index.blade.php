@@ -113,23 +113,12 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Basic Data Tables example with responsive plugin</h5>
+                        <h5>All Students Data</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
+                            
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -143,26 +132,60 @@
                                         <th>E-mail</th>
                                         <th>Course</th>
                                         <th>Branch</th>
+                                        <th>X Marks</th>
+                                        <th>XII Marks</th>
+                                        <th>Sem1</th>
+                                        <th>Sem2</th>
+                                        <th>Sem3</th>
+                                        <th>Sem4</th>
+                                        <th>Sem5</th>
+                                        <th>Sem6</th>
+                                        <th>Sem7</th>
+                                        <th>Sem8</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($students as $st)
-                                     <tr class="gradeX">
+                                     <tr class="gradeA">
                                         <td>{{$st->rollno}}</td>
                                         <td>{{$st->name}}</td>
                                         <td>{{$st->email}}</td>
-                                        <td class="center">{{$st->course}}</td>
-                                        <td class="center">{{$st->branch}}</td>
+                                        <td>{{$st->course}}</td>
+                                        <td>{{$st->branch}}</td>
+                                        <td class="center">{{$st->marks->Xmarks}}</td>
+                                        <td class="center">{{$st->marks->XIImarks}}</td>
+                                        <td class="center">{{$st->marks->sem1}}</td>
+                                        <td class="center">{{$st->marks->sem2}}</td>
+                                        <td class="center">{{$st->marks->sem3}}</td>
+                                        <td class="center">{{$st->marks->sem4}}</td>
+                                        <td class="center">{{$st->marks->sem5}}</td>
+                                        <td class="center">{{$st->marks->sem6}}</td>
+                                        <td class="center">{{$st->marks->sem7}}</td>
+                                        <td class="center">{{$st->marks->sem8}}</td>
+                                        <td class="center"><a type="button" href = "{{URL::route('students.edit',$st->id)}}" vclass="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a></td>
+
                                     </tr>
                                     @endforeach
                                     </tbody>
                                 <tfoot>
                                     <tr>
-                                         <th>Roll Number</th>
+                                        <th>Roll Number</th>
                                         <th>Name</th>
                                         <th>E-mail</th>
                                         <th>Course</th>
                                         <th>Branch</th>
+                                        <th>X Marks</th>
+                                        <th>XII Marks</th>
+                                        <th>Sem1</th>
+                                        <th>Sem2</th>
+                                        <th>Sem3</th>
+                                        <th>Sem4</th>
+                                        <th>Sem5</th>
+                                        <th>Sem6</th>
+                                        <th>Sem7</th>
+                                        <th>Sem8</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </tfoot>
                             </table>
