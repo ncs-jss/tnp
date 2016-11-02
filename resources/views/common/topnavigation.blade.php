@@ -9,7 +9,7 @@
                             <span class="m-r-sm text-muted welcome-message">Welcome To Training And Placement Module.</span>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="{{URL::route('logout')}}">
                                 <i class="fa fa-sign-out"></i> Log out
                             </a>
                         </li>

@@ -12,7 +12,10 @@ class AuthController extends BaseController
 		if(Auth::check()){
 			return Redirect::route('dashboard');
 		}
-		return view('login');	
+		return Redirect::route('login');	
+	}
+	public function loginform(){
+		return view('login');
 	}
 	public function login(Request $request){
 		$data = array('email'=>$request->get('email'),'password'=>$request->get('password'));

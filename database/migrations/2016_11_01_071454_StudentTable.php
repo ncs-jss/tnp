@@ -17,6 +17,7 @@ class StudentTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('contact')->unique();
             $table->string('course');
             $table->string('branch');
             $table->string('rollno');
