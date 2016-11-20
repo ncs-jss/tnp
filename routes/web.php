@@ -17,8 +17,9 @@ Route::get('login',['as'=>'login','uses'=>'AuthController@loginform']);
 Route::post('log',['as'=>'log','uses'=>'AuthController@login']);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('dashboard',['as'=>'dashboard','uses'=>'DashboardController@index']);
-Route::get('logout',['as'=>'logout','uses'=>'AuthController@logout']);
-Route::resource('students', 'StudentController');
+	Route::get('dashboard',['as'=>'dashboard','uses'=>'DashboardController@index']);
+	Route::get('logout',['as'=>'logout','uses'=>'AuthController@logout']);
+	Route::resource('students', 'StudentController');
+	Route::resource('company', 'CompanyController');
 
 });

@@ -25,7 +25,7 @@
             @endif
             @if(strlen(strpos(Request::path(),'students'))>0)
             <li class="active">
-                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Students</span> <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-group"></i> <span class="nav-label">Students</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                   @if(Request::path() == 'students')
                   <li class="active"><a href="{{URL::route('students.index')}}">View All Students Data</a></li>
@@ -40,7 +40,13 @@
               </ul>
           </li>
           @else
-          
+          <li>
+            <a href="#"><i class="fa fa-group"></i> <span class="nav-label">Students</span> <span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level collapse">
+              <li><a href="{{URL::route('students.index')}}">View All Students Data</a></li>
+              <li><a href="{{URL::route('students.create')}}">Insert Student Data</a></li>
+          </ul>
+      </li>
       @endif
   </ul>
 

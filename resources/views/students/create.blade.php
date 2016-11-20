@@ -11,6 +11,13 @@
         <div id="page-wrapper" class="gray-bg dashbard-1">
             @include('common.topnavigation')
             <div class="wrapper wrapper-content animated fadeIn">
+                <div class="ibox-content m-b-sm border-bottom">
+                            <div class="text-center p-lg">
+                                <h2>Have a lage amount of data?</h2>
+                                <span>Import Excel</span>
+                                <button title="Create new cluster" class="btn btn-primary btn-sm"><i class="fa fa-upload"></i> <span class="bold">Import</span></button> 
+                            </div>
+                        </div>
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
